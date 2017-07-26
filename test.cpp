@@ -1,13 +1,13 @@
 #include<iostream>
-#include<sstream>
 using namespace std;
 
-int a=999999999,b=999999999;
+char t[100];
 
 int main() {
 	ios::sync_with_stdio(false); 
 	
-	a=a+b;
-	cout<<a;
+	cin>>t;
+	cin>>t;
+	cout<<t[8]<<endl;
 	return 0;
 }
