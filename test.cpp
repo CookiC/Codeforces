@@ -1,13 +1,10 @@
 #include<iostream>
 using namespace std;
 
-char t[100];
-
 int main() {
 	ios::sync_with_stdio(false); 
 	
-	cin>>t;
-	cin>>t;
-	cout<<t[8]<<endl;
+	int a=3e9;
+	cout<<a<<endl;
 	return 0;
 }

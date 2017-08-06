@@ -3,7 +3,7 @@
 #define maxn 200010
 using namespace std;
 
-int n,x,len;
+int n,x;
 int f[maxn],d[maxn];
 vector<int> G[maxn];
 
@@ -16,13 +16,20 @@ void Dfs1(int u){
 		}
 }
 
-int Dfs2(){
+int ans=0;
+
+void Dfs2(int u){
+	if(d[u]>ans)
+		ans=d[u];
+	for(auto &v:G[u])
+		if(v!=f[u])
+			Dfs2(v);
 }
 
 int main(){
 	ios::sync_with_stdio(false);
 	
-	int i,j;
+	int i,j,u,v;
 	cin>>n>>x;
 	for(i=0;i<n-1;++i){
 		cin>>u>>v;
@@ -33,9 +40,10 @@ int main(){
 	d[1]=0;
 	Dfs1(1);
 	j=x;
-	for(i=0;i<len/2;++i)
+	for(i=0;i<(d[x]-1)/2;++i)
 		j=f[j];
 	Dfs2(j);
+	cout<<ans*2<<endl;
 	return 0;
 }
 
